@@ -1,0 +1,20 @@
+@font-face {
+    font-family: iranYekan;
+    font-weight: 300;
+    src: url(./fonts/Qs_Iranyekan\ medium.ttf);
+}
+@font-face {
+    font-family: iranYekan;
+    font-weight: 500;
+    src: url(./fonts/Qs_Iranyekan\ black.ttf);
+}
+@font-face {
+    font-family: iranYekan;
+    font-weight: 600;
+    src: url(./fonts/Qs_Iranyekan\ bold.ttf);
+}
+@font-face {
+    font-family: iranYekan;
+    font-weight: 700;
+    src: url(./fonts/Qs_Iranyekan\ extrabold.ttf);
+}
