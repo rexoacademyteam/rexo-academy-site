@@ -1,17 +1,16 @@
 import { useState } from "react";
 import logo from "../assets/images/Asset 3.png";
-import logo2 from "../assets/images/seyed 2 (1).png"
+import logo2 from "../assets/images/seyed 2 (1).png";
 const Navigation = () => {
-    const [isOPen , setIsOpen] = useState(false);
-    const handleMenuClick = () => {
-        setIsOpen(!isOPen);
-    }   
-
+  const [isOPen, setIsOpen] = useState(false);
+  const handleMenuClick = () => {
+    setIsOpen(!isOPen);
+  };
 
   return (
     <header className="p-3">
       <div className="flex justify-between align-center max-w-6xl mx-auto">
-        <div className={`flex justify-around ${isOPen? "block" : ""}`}>
+        <div className={`flex justify-around ${isOPen ? "block" : ""}`}>
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,10 +44,13 @@ const Navigation = () => {
             </svg>
             <span>ورود</span>
           </button>
-
         </div>
-       
-                <div className={`md:flex justify-around ${isOPen? "flex" : "hidden"} w-auto`}>
+
+        <div
+          className={`md:flex justify-around ${
+            isOPen ? "flex" : "hidden"
+          } w-auto`}
+        >
           <nav>
             <ul className="flex justify-around">
               <li className="ml-5 rounded-xl p-1 hover:text-[#6b36cc]  cursor-pointer flex">
@@ -122,15 +124,19 @@ const Navigation = () => {
             </ul>
           </nav>
         </div>
-        
+
         <div className="cursor-pointer flex">
           <img src={logo} className="hidden w-[80px] md:block" alt="logo" />
-          <img src={logo2} className="md:hidden w-[50px] h-[30px]" alt="logo2" />
-        <div class="space-y-2 md:hidden mr-2" onClick={handleMenuClick}>
-          <span class="block w-5 h-0.5 bg-gray-600"></span>
-          <span class="block w-8 h-0.5 bg-gray-600"></span>
-          <span class="block w-5 h-0.5 bg-gray-600"></span>
-        </div>
+          <img
+            src={logo2}
+            className="md:hidden w-[50px] h-[30px]"
+            alt="logo2"
+          />
+          <div className="space-y-2 md:hidden mr-2" onClick={handleMenuClick}>
+            <span className="block w-5 h-0.5 bg-gray-600"></span>
+            <span className="block w-8 h-0.5 bg-gray-600"></span>
+            <span className="block w-5 h-0.5 bg-gray-600"></span>
+          </div>
         </div>
       </div>
     </header>

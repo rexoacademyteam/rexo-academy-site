@@ -1,3 +1,0 @@
-const Layouter = ({ children, layout }) => {
-
-}
