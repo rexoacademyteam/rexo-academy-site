@@ -1,13 +1,13 @@
 import './App.css';
 import Layout from './components/Layout';
+import MainBanner from './components/MainBanner'
+
 
 function App() {
   return (
     <div className="App">
       <Layout>
-          hbfhbhjf
-          fffg
-          g
+         <MainBanner/>
       </Layout>
     </div>
   );
