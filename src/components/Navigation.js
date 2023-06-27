@@ -1,16 +1,94 @@
 import { useState } from "react";
-import logo from "../assets/images/Asset 3.png";
-import logo2 from "../assets/images/seyed 2 (1).png";
+import logo from "../assets/images/asset-3.png";
+import logo2 from "../assets/images/seyed-2.png";
+
+const MobileNav = () => {
+  return (
+    <div className="w-full py-4 md:hidden">
+      <div className="flex flex-col items-center gap-4">
+        <a className="ml-5 rounded-xl p-1 hover:text-[#6b36cc]  cursor-pointer flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+            />
+          </svg>
+          <span className="mr-1">دوره های آموزشی</span>
+        </a>
+        <a className="ml-5 rounded-xl p-1 hover:text-[#6b36cc]  cursor-pointer flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
+            />
+          </svg>
+          <span className="mr-1">چرا رکسو؟</span>
+        </a>
+        <a className="ml-5 rounded-xl p-1 hover:text-[#6b36cc]  cursor-pointer flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+            />
+          </svg>
+          <span className="mr-1">ارتباط با ما</span>
+        </a>
+        <a className=" rounded-xl p-1 hover:text-[#6b36cc]  cursor-pointer flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25"
+            />
+          </svg>
+          <span className="mr-1">ثبت سفارش</span>
+        </a>
+      </div>
+    </div>
+  )
+}
+
 const Navigation = () => {
-  const [isOPen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const handleMenuClick = () => {
-    setIsOpen(!isOPen);
+    setIsOpen(!isOpen);
   };
 
   return (
-    <header className="p-3">
-      <div className="flex justify-between align-center max-w-6xl mx-auto">
-        <div className={`flex justify-around ${isOPen ? "block" : ""}`}>
+    <header className="px-3 py-2 shadow-sm">
+      <div className="flex justify-between items-center align-center max-w-6xl mx-auto">
+        <div className={`flex justify-around ${isOpen ? "block" : ""}`}>
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -47,11 +125,10 @@ const Navigation = () => {
         </div>
 
         <div
-          className={`md:flex justify-around ${
-            isOPen ? "flex" : "hidden"
-          } w-auto`}
+          className={`md:flex justify-around ${isOpen ? "flex" : "hidden"
+            } w-auto`}
         >
-          <nav>
+          <nav className="hidden md:block">
             <ul className="flex justify-around">
               <li className="ml-5 rounded-xl p-1 hover:text-[#6b36cc]  cursor-pointer flex">
                 <svg
@@ -139,6 +216,7 @@ const Navigation = () => {
           </div>
         </div>
       </div>
+      {isOpen ? <MobileNav /> : null}
     </header>
   );
 };
